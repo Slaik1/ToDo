@@ -1,0 +1,101 @@
+@import "./normalize.scss";
+@import "./reset.scss";
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Outfit:wght@300;400;500;600&display=swap');
+
+body{
+    height: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family:'Outfit','sans-serif';
+    background: #384152;
+    .container{
+        width: 600px;
+
+        background: #FFF;
+        border-radius: 20px;
+        display: flex;
+        justify-content: start;
+        align-items:center;
+        flex-direction: column;
+        -webkit-box-shadow: 10px 10px 11px 0px rgba(34, 60, 80, 0.2);
+        -moz-box-shadow: 10px 10px 11px 0px rgba(34, 60, 80, 0.2);
+        box-shadow: 10px 10px 11px 0px rgba(34, 60, 80, 0.2);
+        h1{
+            margin-bottom: 20px;
+            font-size: 35px;
+            line-height: 50px;
+            font-weight: 600;
+            opacity: 0.6;
+        }
+        .container__input{
+            width: 80%;
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 40px;
+            font-size: 20px;
+            input{
+                border: none;
+                background: #F2F2F2;
+                width: 70%;
+                height: 30px;
+                border-radius: 5px;
+                transition: 0.4s ease;
+                &:focus-visible{
+                    top: 2px;
+                    outline: none;
+                }
+            }
+            button {
+                position: relative;
+                border: none;
+                color: #5e5c5c;
+                height: 30px;
+                width: 100px;
+                border-radius: 5px;
+                font-size: 20px;
+                transition: all 0.4s ease;
+                user-select: none;
+                cursor: pointer;
+                &:active {
+                    top: 2px;
+                    background: #d1cdcd;
+                }
+              }
+        }
+        h2{
+            margin-bottom: 20px;
+            font-size: 25px;
+            font-weight: 400;
+            opacity: 0.6;
+        }
+        .tacks-list{
+            width: 75%;
+            font-size: 20px;
+            line-height: 30px;
+            color: #504e4e;
+            li{
+                margin-bottom: 15px;
+                border-bottom: 1px solid #000;
+                border-color:#6d6b6b;
+                display: flex;
+                justify-content: space-between;
+                span{
+                    user-select: none;
+                    cursor: pointer;
+                }
+                img{
+                    user-select: none;
+                    cursor: pointer;
+                }
+            }
+        }
+        .mb{
+            margin-bottom: 50px;
+        }
+    }
+}
+.done{
+    text-decoration: line-through;
+    color: #a5a5a5;
+}
