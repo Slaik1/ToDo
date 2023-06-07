@@ -2,8 +2,14 @@
 @import "./reset.scss";
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Outfit:wght@300;400;500;600&display=swap');
 
+.done{
+    text-decoration: line-through;
+    color: #a5a5a5;
+}
+
 body{
-    height: inherit;
+    min-height: 100%;
+    display: block;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -11,7 +17,6 @@ body{
     background: #384152;
     .container{
         width: 600px;
-
         background: #FFF;
         border-radius: 20px;
         display: flex;
@@ -34,6 +39,7 @@ body{
             justify-content: space-around;
             margin-bottom: 40px;
             font-size: 20px;
+            user-select: none;
             input{
                 border: none;
                 background: #F2F2F2;
@@ -44,6 +50,7 @@ body{
                 &:focus-visible{
                     top: 2px;
                     outline: none;
+                    background: #d1cdcd;
                 }
             }
             button {
@@ -61,7 +68,7 @@ body{
                     top: 2px;
                     background: #d1cdcd;
                 }
-              }
+            }
         }
         h2{
             margin-bottom: 20px;
@@ -69,7 +76,7 @@ body{
             font-weight: 400;
             opacity: 0.6;
         }
-        .tacks-list{
+        .container__tasks{
             width: 75%;
             font-size: 20px;
             line-height: 30px;
@@ -90,12 +97,9 @@ body{
                 }
             }
         }
-        .mb{
-            margin-bottom: 50px;
+        .container__alert{
+            margin-bottom: 30px;
+            visibility: hidden;
         }
     }
-}
-.done{
-    text-decoration: line-through;
-    color: #a5a5a5;
 }

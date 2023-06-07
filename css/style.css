@@ -362,8 +362,14 @@ table {
   border-spacing: 0;
 }
 
+.done {
+  text-decoration: line-through;
+  color: #a5a5a5;
+}
+
 body {
-  height: inherit;
+  min-height: 100%;
+  display: block;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -393,6 +399,9 @@ body .container .container__input {
   justify-content: space-around;
   margin-bottom: 40px;
   font-size: 20px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 body .container .container__input input {
   border: none;
@@ -405,6 +414,7 @@ body .container .container__input input {
 body .container .container__input input:focus-visible {
   top: 2px;
   outline: none;
+  background: #d1cdcd;
 }
 body .container .container__input button {
   position: relative;
@@ -430,36 +440,32 @@ body .container h2 {
   font-weight: 400;
   opacity: 0.6;
 }
-body .container .tacks-list {
+body .container .container__tasks {
   width: 75%;
   font-size: 20px;
   line-height: 30px;
   color: #504e4e;
 }
-body .container .tacks-list li {
+body .container .container__tasks li {
   margin-bottom: 15px;
   border-bottom: 1px solid #000;
   border-color: #6d6b6b;
   display: flex;
   justify-content: space-between;
 }
-body .container .tacks-list li span {
+body .container .container__tasks li span {
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
   cursor: pointer;
 }
-body .container .tacks-list li img {
+body .container .container__tasks li img {
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
   cursor: pointer;
 }
-body .container .mb {
-  margin-bottom: 50px;
-}
-
-.done {
-  text-decoration: line-through;
-  color: #a5a5a5;
+body .container .container__alert {
+  margin-bottom: 30px;
+  visibility: hidden;
 }
