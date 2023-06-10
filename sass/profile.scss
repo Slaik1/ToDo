@@ -1,0 +1,30 @@
+@import "./normalize.scss";
+@import "./reset.scss";
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Outfit:wght@300;400;500;600&display=swap');
+
+.done{
+    text-decoration: line-through;
+    color: #a5a5a5;
+}
+
+body{
+    min-height: 100%;
+    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family:'Outfit','sans-serif';
+    background: #384152;
+}
+.container{
+    width: 600px;
+    background: #FFF;
+    border-radius: 20px;
+    display: flex;
+    justify-content: start;
+    align-items:center;
+    flex-direction: column;
+    -webkit-box-shadow: 10px 10px 11px 0px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 10px 10px 11px 0px rgba(34, 60, 80, 0.2);
+    box-shadow: 10px 10px 11px 0px rgba(34, 60, 80, 0.2);
+}
