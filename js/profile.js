@@ -13,9 +13,11 @@ function createNewUser(){
 }
 
 async function fetchUserInfo(userId){
+    
    try{
+        // setTimeout(function () {console.log('a');}, 2000)
         const response = await fetch(DOMAINURL+'/'+ userId)
-        const data = await response.json()
+        const data = await response.json().then(stopLoader())
         fillUserInfo(data)
     }
     catch(e){
@@ -62,4 +64,3 @@ function findDOMContent(){
 }
 
 fetchUserInfo(userId)
-stopLoader()
