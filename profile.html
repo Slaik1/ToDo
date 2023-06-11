@@ -7,22 +7,30 @@
     <link rel="stylesheet" href="./css/profile.css">
     <title>User profile</title>
     <meta name="description" content="Profile">
-    <!-- <script defer src="./js/script.js"></script> -->
+    <script defer src="./js/profile.js"></script>
     <link rel="icon" href="./icons/todo.ico" type="image/x-icon">
 </head>
 <body>
+    <div class="preloader">
+      <div class="preloader__row">
+        <div class="preloader__item"></div>
+        <div class="preloader__item"></div>
+      </div>
+    </div>
     <div class="container">
       <div class="profile">
         <h1>Profile</h1>
+        <a href="./index.html">To Do list</a>
         <div class="profile__photo">
-            <img src="https://media.istockphoto.com/id/1270067126/photo/smiling-indian-man-looking-at-camera.jpg?s=612x612&w=0&k=20&c=ovIQ5GPurLd3mOUj82jB9v-bjGZ8updgy1ACaHMeEC0=" alt="user photo">
+            <img id="photo" src="" alt="user photo">
         </div>
         <ul class="profile__info">
-          <li><span>Name</span>Victor</li>
-          <li><span>Name</span>Victor</li>
-          <li><span>Name</span>Victor</li>
-          <li><span>Name</span>Victor</li>
-          <li><span>Name</span>Victor</li>
+          <li><span>Name</span><p></p></li>
+          <li><span>Country</span><p></p></li>
+          <li><span>City</span><p></p></li>
+          <li><span>Street</span><p></p></li>
+          <li><span>Phone</span><p></p></li>
+          <li><span>Birth date</span><p></p></li>
         </ul>
       </div>
     </div>

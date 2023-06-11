@@ -1,6 +1,7 @@
 @import "./normalize.scss";
 @import "./reset.scss";
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Outfit:wght@300;400;500;600&display=swap');
+@import "preloader.scss";
 
 .done{
     text-decoration: line-through;
@@ -19,7 +20,7 @@ body{
 
 .container{
     width: 600px;
-    height: 900px;
+    height: 700px;
     background: #FFF;
     border-radius: 20px;
     display: flex;
@@ -32,6 +33,7 @@ body{
 }
 
 .profile {
+    position: relative;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -43,6 +45,17 @@ body{
         font-weight: 600;
         opacity: 0.6;
         text-align: center;
+        
+    }
+
+    a {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        font-size: 20px;
+        text-decoration: none;
+        color: #504e4e;
+        cursor: pointer;
     }
 
     .profile__photo {
@@ -51,7 +64,7 @@ body{
         overflow: hidden;
         width: 200px;
         height: 200px;
-        margin-bottom: 50px;
+        margin-bottom: 30px;
 
         img {
             width:100%;
@@ -60,22 +73,24 @@ body{
         }
     }
 
-    .profile__info{
+    .profile__info {
         width: 75%;
-        font-size: 20px;
+        font-size: 23px;
         color: #504e4e;
-        li{
+
+        li {
             position: relative;
             margin-bottom: 15px;
             border-bottom: 1px solid #000;
             border-color:#6d6b6b;
-            height: 30px;
+            height: 40px;
             display: flex;
             align-items: end;
+
             span{
                 position: absolute;
                 top: 0px;
-                font-size: 10px;
+                font-size: 12px;
             }   
         }
     }

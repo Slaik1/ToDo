@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -379,7 +380,7 @@ body {
 
 .container {
   width: 600px;
-  height: 900px;
+  height: 700px;
   background: #FFF;
   border-radius: 20px;
   display: flex;
@@ -390,6 +391,7 @@ body {
 }
 
 .profile {
+  position: relative;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -403,13 +405,22 @@ body {
   opacity: 0.6;
   text-align: center;
 }
+.profile a {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 20px;
+  text-decoration: none;
+  color: #504e4e;
+  cursor: pointer;
+}
 .profile .profile__photo {
   display: inline-block;
   border-radius: 50%;
   overflow: hidden;
   width: 200px;
   height: 200px;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 .profile .profile__photo img {
   width: 100%;
@@ -419,7 +430,7 @@ body {
 }
 .profile .profile__info {
   width: 75%;
-  font-size: 20px;
+  font-size: 23px;
   color: #504e4e;
 }
 .profile .profile__info li {
@@ -427,12 +438,77 @@ body {
   margin-bottom: 15px;
   border-bottom: 1px solid #000;
   border-color: #6d6b6b;
-  height: 30px;
+  height: 40px;
   display: flex;
   align-items: end;
 }
 .profile .profile__info li span {
   position: absolute;
   top: 0px;
-  font-size: 10px;
+  font-size: 12px;
+}
+
+.preloader {
+  /*фиксированное позиционирование*/
+  position: fixed;
+  /* координаты положения */
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  /* фоновый цвет элемента */
+  background: #e0e0e0;
+  /* размещаем блок над всеми элементами на странице (это значение должно быть больше, чем у любого другого позиционированного элемента на странице) */
+  z-index: 1001;
+}
+
+.preloader__row {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  width: 70px;
+  height: 70px;
+  margin-top: -35px;
+  margin-left: -35px;
+  text-align: center;
+  animation: preloader-rotate 2s infinite linear;
+}
+
+.preloader__item {
+  position: absolute;
+  display: inline-block;
+  top: 0;
+  background-color: #337ab7;
+  border-radius: 100%;
+  width: 35px;
+  height: 35px;
+  animation: preloader-bounce 2s infinite ease-in-out;
+}
+
+.preloader__item:last-child {
+  top: auto;
+  bottom: 0;
+  animation-delay: -1s;
+}
+
+@keyframes preloader-rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes preloader-bounce {
+  0%, 100% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1);
+  }
+}
+.loaded_hiding .preloader {
+  transition: 0.3s opacity;
+  opacity: 0;
+}
+
+.loaded .preloader {
+  display: none;
 }

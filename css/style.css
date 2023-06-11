@@ -377,6 +377,7 @@ body {
   background: #384152;
 }
 body .container {
+  position: relative;
   width: 600px;
   background: #FFF;
   border-radius: 20px;
@@ -392,6 +393,15 @@ body .container h1 {
   line-height: 50px;
   font-weight: 600;
   opacity: 0.6;
+}
+body .container a {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 20px;
+  text-decoration: none;
+  color: #504e4e;
+  cursor: pointer;
 }
 body .container .container__input {
   width: 80%;

@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded',() =>{
         const span=document.createElement('span')
         const img=document.createElement('img')
 
-        span.innerHTML = text
+        span.innerText = text
         img.src='./icons/delete.svg'
 
         li.appendChild(span)
@@ -23,11 +23,11 @@ document.addEventListener('DOMContentLoaded',() =>{
     }
 
     function saveData(){
-        localStorage.setItem('data',elements.tasks.innerHTML)
+        localStorage.setItem('data',elements.tasks.innerText)
     }
     
     function showData(){
-        elements.tasks.innerHTML=localStorage.getItem('data')
+        elements.tasks.innerText=localStorage.getItem('data')
     }
 
     elements.btnAdd.onclick=()=>{
