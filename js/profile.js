@@ -1,66 +1,64 @@
-const DOMAINURL='https://6484e2a6ee799e3216271c29.mockapi.io/api/v1/users'
-let userId
-if(localStorage.getItem('userId') === null){
-    createNewUser()
-}
-else{
-    userId = localStorage.getItem('userId')
-}
+const DOMAINURL = 'https://6484e2a6ee799e3216271c29.mockapi.io/api/v1/users';
+let userId;
 
-function createNewUser(){
-    userId = Math.floor(Math.random()*99+1)
-    localStorage.setItem('userId',userId)
+if (!localStorage.getItem('userId')) {
+  createNewUser();
+} else {
+  userId = localStorage.getItem('userId');
 }
 
-async function fetchUserInfo(userId){
-    
-   try{
-        // setTimeout(function () {console.log('a');}, 2000)
-        const response = await fetch(DOMAINURL+'/'+ userId)
-        const data = await response.json().then(stopLoader())
-        fillUserInfo(data)
-    }
-    catch(e){
-        alert(e)
-    }
+function createNewUser() {
+  userId = Math.floor(Math.random() * 99 + 1);
+  localStorage.setItem('userId', userId);
 }
 
-function fillUserInfo(data){
-    const DOMFields = findDOMContent()
-    DOMFields.name.innerText = data.name
-    DOMFields.country.innerText = data.country
-    DOMFields.city.innerText = data.city
-    DOMFields.street.innerText = data.street
-    DOMFields.phone.innerText = data.phone
-    DOMFields.birthDate.innerText = data.birthdate
-    DOMFields.photo.src=data.image
+async function fetchUserInfo(userId) {
+  try {
+    const response = await fetch(`${DOMAINURL}/${userId}`);
+    const data = await response.json();
+    fillUserInfo(data);
+    stopLoader();
+  } catch (error) {
+    alert(error);
+  }
 }
 
-function stopLoader(){
-    document.body.classList.add('loaded');
+function fillUserInfo(data) {
+  const {
+    name,
+    country,
+    city,
+    street,
+    phone,
+    birthdate,
+    image
+  } = data;
+
+  const DOMFields = findDOMContent();
+  DOMFields.name.innerText = name;
+  DOMFields.country.innerText = country;
+  DOMFields.city.innerText = city;
+  DOMFields.street.innerText = street;
+  DOMFields.phone.innerText = phone;
+  DOMFields.birthDate.innerText = birthdate;
+  DOMFields.photo.src = image;
 }
 
-function findDOMContent(){
-    const fields = document.querySelector('.profile__info').children
-
-    const DOMFields={
-        name:'',
-        country:'',
-        city:'',
-        street:'',
-        phone:'',
-        birthDate:'',
-    }
-
-    let i=0
-    for (let field in DOMFields) {
-        DOMFields[field] = fields[i].children[1]
-        i++
-    }
-
-    DOMFields.photo = document.querySelector('#photo')
-    
-    return DOMFields
+function stopLoader() {
+  document.body.classList.add('loaded');
 }
 
-fetchUserInfo(userId)
+function findDOMContent() {
+  const DOMFields = {
+    name: document.querySelector('#name'),
+    country: document.querySelector('#country'),
+    city: document.querySelector('#city'),
+    street: document.querySelector('#street'),
+    phone: document.querySelector('#phone'),
+    birthDate: document.querySelector('#birthDate'),
+    photo: document.querySelector('#photo')
+  };
+  return DOMFields;
+}
+
+fetchUserInfo(userId);
