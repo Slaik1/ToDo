@@ -1,5 +1,5 @@
-const DOMAINURL = 'https://6484e2a6ee799e3216271c29.mockapi.io/api/v1/users';
-let userId;
+const DOMAINURL = 'https://6484e2a6ee799e3216271c29.mockapi.io/api/v1/users'
+let userId
 
 if (!localStorage.getItem('userId')) {
   createNewUser();
@@ -45,7 +45,12 @@ function fillUserInfo(data) {
 }
 
 function stopLoader() {
-  document.body.classList.add('loaded');
+
+  document.body.classList.add('loaded_hiding');
+  window.setTimeout(function () {
+    document.body.classList.add('loaded');
+    document.body.classList.remove('loaded_hiding');
+  }, 500);
 }
 
 function findDOMContent() {

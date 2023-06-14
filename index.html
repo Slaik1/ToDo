@@ -13,16 +13,25 @@
 <body>
     <div class="container">
         <h1>To Do List</h1>
-        <a href="./profile.html">Profile</a>
-        <div class="container__input">
-            <input type="text" placeholder="New"/>
-            <button>Add</button>
+        <!-- <a href="./pages/profile.html">Profile</a> -->
+        <div class="container__wrapper" id="wrapper">
+            <div class="preloader">
+                <div class="preloader__row">
+                  <div class="preloader__item"></div>
+                  <div class="preloader__item"></div>
+                </div>
+            </div>
+            <div class="container__input">
+                <input id="input" type="text" placeholder="New"/>
+                <button id="addButton">Add</button>
+            </div>
+            <div class="container__alert">
+                <h3></h3>
+            </div>
+            <h2>Tasks</h2>
+            <ul class="container__tasks"></ul>
         </div>
-        <h2>Tasks</h2>
-        <ul class="container__tasks"></ul>
-        <div class="container__alert">
-            <h3>Text field is empty</h3>
-        </div>
+       
     </div>
 </body>
 </html>

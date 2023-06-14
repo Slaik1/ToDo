@@ -1,12 +1,11 @@
 .preloader {
-    position: fixed;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    /* фоновый цвет элемента */
-    background: #e0e0e0;
-    /* размещаем блок над всеми элементами на странице (это значение должно быть больше, чем у любого другого позиционированного элемента на странице) */
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    border-radius: 20px;
+    background: #FFF; 
     z-index: 1001;
   }
   

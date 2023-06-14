@@ -1,10 +1,23 @@
 @import "./normalize.scss";
 @import "./reset.scss";
+@import "preloader.scss";
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Outfit:wght@300;400;500;600&display=swap');
 
 .done {
     text-decoration: line-through;
     color: #a5a5a5;
+}
+
+.container__wrapper{
+    position: relative;
+    position: relative;
+    width: 600px;
+    background: #FFF;
+    border-radius: 20px;
+    display: flex;
+    justify-content: start;
+    align-items:center;
+    flex-direction: column;
 }
 
 body {
@@ -50,7 +63,7 @@ body {
             width: 80%;
             display: flex;
             justify-content: space-around;
-            margin-bottom: 40px;
+            margin-bottom: 10px;
             font-size: 20px;
             user-select: none;
 
@@ -121,8 +134,8 @@ body {
         }
 
         .container__alert {
-            margin-bottom: 30px;
             visibility: hidden;
+            margin-bottom: 30px;
         }
     }
 }

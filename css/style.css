@@ -362,9 +362,83 @@ table {
   border-spacing: 0;
 }
 
+.preloader {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+  border-radius: 20px;
+  background: #FFF;
+  z-index: 1001;
+}
+
+.preloader__row {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  width: 70px;
+  height: 70px;
+  margin-top: -35px;
+  margin-left: -35px;
+  text-align: center;
+  animation: preloader-rotate 2s infinite linear;
+}
+
+.preloader__item {
+  position: absolute;
+  display: inline-block;
+  top: 0;
+  background-color: #337ab7;
+  border-radius: 100%;
+  width: 35px;
+  height: 35px;
+  animation: preloader-bounce 2s infinite ease-in-out;
+}
+
+.preloader__item:last-child {
+  top: auto;
+  bottom: 0;
+  animation-delay: -1s;
+}
+
+@keyframes preloader-rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes preloader-bounce {
+  0%, 100% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1);
+  }
+}
+.loaded_hiding .preloader {
+  transition: 0.3s opacity;
+  opacity: 0;
+}
+
+.loaded .preloader {
+  display: none;
+}
+
 .done {
   text-decoration: line-through;
   color: #a5a5a5;
+}
+
+.container__wrapper {
+  position: relative;
+  position: relative;
+  width: 600px;
+  background: #FFF;
+  border-radius: 20px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
 }
 
 body {
@@ -407,7 +481,7 @@ body .container .container__input {
   width: 80%;
   display: flex;
   justify-content: space-around;
-  margin-bottom: 40px;
+  margin-bottom: 10px;
   font-size: 20px;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -476,6 +550,6 @@ body .container .container__tasks li img {
   cursor: pointer;
 }
 body .container .container__alert {
-  margin-bottom: 30px;
   visibility: hidden;
+  margin-bottom: 30px;
 }
