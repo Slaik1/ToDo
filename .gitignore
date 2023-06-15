@@ -1,2 +1,6 @@
 # ignore ALL .css files
-#*.css
+css
+/css
+
+# ignore vscode files
+.vscode
