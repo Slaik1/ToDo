@@ -1,0 +1,96 @@
+@import "./normalize.scss";
+@import "./reset.scss";
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Outfit:wght@300;400;500;600&display=swap');
+@import "preloader.scss";
+
+.done{
+    text-decoration: line-through;
+    color: #a5a5a5;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family:'Outfit','sans-serif';
+    background: #384152;
+}
+
+.container{
+    width: 600px;
+    background: #FFF;
+    border-radius: 20px;
+    display: flex;
+    justify-content: start;
+    align-items:center;
+    flex-direction: column;
+    -webkit-box-shadow: 10px 10px 11px 0px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 10px 10px 11px 0px rgba(34, 60, 80, 0.2);
+    box-shadow: 10px 10px 11px 0px rgba(34, 60, 80, 0.2);
+}
+
+.profile {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h1{
+        margin-bottom: 20px;
+        font-size: 35px;
+        line-height: 50px;
+        font-weight: 600;
+        opacity: 0.6;
+        text-align: center;
+        
+    }
+
+    a {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        font-size: 20px;
+        text-decoration: none;
+        color: #504e4e;
+        cursor: pointer;
+    }
+
+    .profile__photo {
+        display: inline-block;
+        border-radius: 50%;
+        overflow: hidden;
+        width: 200px;
+        height: 200px;
+        margin-bottom: 30px;
+
+        img {
+            width:100%;
+            height:100%;
+            object-fit: cover;
+        }
+    }
+
+    .profile__info {
+        width: 75%;
+        font-size: 23px;
+        color: #504e4e;
+        margin-bottom: 30px;
+
+        li {
+            position: relative;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #000;
+            border-color:#6d6b6b;
+            height: 40px;
+            display: flex;
+            align-items: end;
+
+            span{
+                position: absolute;
+                top: 0px;
+                font-size: 12px;
+            }   
+        }
+    }
+}
